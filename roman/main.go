@@ -4,10 +4,10 @@ import (
 	"errors"
 )
 
-var romanNumeral = []struct{
-	value int
+var romanNumeral = []struct {
+	value  int
 	symbol string
-} {
+}{
 	{1000, "M"},
 	{900, "CM"},
 	{500, "D"},
@@ -27,7 +27,7 @@ func ConvertToRoman(num int) (roman string, err error) {
 	err = nil
 	roman = ""
 	if num <= 0 {
-		err = errors.New("No representation found. Numbers start with 1 in roman numeral")
+		err = errors.New("No representation found. Numbers start with 1 in Roman Numeral representation.")
 		return
 	}
 	if num > 3999 {

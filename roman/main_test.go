@@ -12,8 +12,8 @@ func TestConvertToRoman(t *testing.T) {
 		expected    string
 		expectedErr error
 	}{
-		{"NegativeNumber", -9, "", errors.New("No representation found. Numbers start with 1 in roman numeral")},
-		{"TestCase0", 0, "", errors.New("No representation found. Numbers start with 1 in roman numeral")},
+		{"NegativeNumber", -9, "", errors.New("No representation found. Numbers start with 1 in Roman Numeral representation.")},
+		{"TestCase0", 0, "", errors.New("No representation found. Numbers start with 1 in Roman Numeral representation.")},
 		{"TestCase1", 1, "I", nil},
 		{"TestCase2", 2, "II", nil},
 		{"TestCase3", 3, "III", nil},
@@ -33,6 +33,8 @@ func TestConvertToRoman(t *testing.T) {
 		{"TestCase900", 900, "CM", nil},
 		{"TestCase999", 999, "CMXCIX", nil},
 		{"TestCase1000", 1000, "M", nil},
+		{"TestCase1234", 1234, "MCCXXXIV", nil},
+		{"TestCase1987", 1987, "MCMLXXXVII", nil},
 		{"TestCase2023", 2023, "MMXXIII", nil},
 		{"TestCase999999", 999999, "", errors.New("Numerals larger than 3999 don't have a consistent Roman Numeral representation.")},
 		{"TestCase3999", 3999, "MMMCMXCIX", nil},
